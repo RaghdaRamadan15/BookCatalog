@@ -1,0 +1,65 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# ASP.NET related
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+
+# dotenv environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+# Compiled source #
+*.dll
+*.exe
+*.pdb
+*.cache
+*.manifest
+*.vspscc
+
+# Backup & temp files
+*~
+*.bak
+*.tmp
+
+# Publish folders
+wwwroot/
+node_modules/
+dist/
+
+# dotnet tools
+.tools/
+
+# JetBrains Rider cache
+.idea/
+*.sln.iml
+
+# Others
+TestResults/

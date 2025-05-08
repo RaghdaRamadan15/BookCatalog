@@ -1,0 +1,130 @@
+﻿using BookLending.Domain.Interfaces;
+using BookLending.Domain.Models;
+using BookLending.Infrastructure.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BookLending.Infrastructure.Services
+{
+    public class UserBorrowingRepository : IUserBorrowingRepository
+    {
+        private BookContext context;
+        public UserBorrowingRepository(BookContext _context) 
+        {
+            context= _context;
+
+
+        }
+        #region Borrowing book
+        public async Task<Borrowing> AddBorrowingAsync(Borrowing borrowing)
+        {
+            var userId = borrowing.UserId;
+            Borrowing borrow = new Borrowing();
+            var isCanBrorrow = await context.borrows.Where(x => x.UserId == userId && x.IsReturned == false)
+                   .FirstOrDefaultAsync();
+            if (isCanBrorrow == null)
+            {
+
+
+                borrow.UserId = userId;
+                borrow.BookId = borrowing.BookId;
+                borrow.BorrowDate = DateTime.Today;
+                borrow.DueDate = DateTime.Today.AddDays(7);
+                borrow.IsReturned = false;
+                var book = await context.books.FirstOrDefaultAsync(x => x.Id == borrowing.BookId);
+                if (book != null)
+                {
+                    book.Quantity -= 1;
+                    context.books.Update(book);
+                }
+                await context.borrows.AddAsync(borrow);
+
+                await context.SaveChangesAsync();
+
+                return borrow;
+
+            }
+            return null;
+        }
+
+        #endregion
+
+
+        #region getAll return and borrow
+        public async Task<IEnumerable<Borrowing?>> GetBorrowings()
+        {
+            return await context.borrows.AsNoTracking().Include(x => x.User).Include(x => x.Book).ToListAsync();
+
+
+
+        }
+
+        #endregion
+
+        #region get one
+        public async Task<IEnumerable<Borrowing?>> GetByIdsync(int id)
+        {
+            return await context.borrows.Where(x => x.BookId == id).AsNoTracking().Include(x => x.User).Include(x => x.Book).ToListAsync();
+
+        }
+        #endregion
+
+        #region  get all process for the Member
+        public async Task<IEnumerable<Borrowing?>> GetByUserIdAsync(string userId)
+        {
+            return await context.borrows.Where(x => x.UserId == userId).AsNoTracking().Include(x => x.User).Include(x => x.Book).ToListAsync();
+
+        }
+        #endregion
+
+
+        #region getAll late
+        public async Task<IEnumerable<Borrowing?>> GetOverdueBorrowingsAsync()
+        {
+            return await context.borrows.Where(x => x.IsReturned == false && x.DueDate < DateTime.Today).AsNoTracking().ToListAsync();
+
+        }
+        #endregion
+
+
+
+
+
+
+        #region Return Book
+        public async Task<string> UpdateBorrowingAsync(int bookId, string userId)
+        {
+            var borrowing = await context.borrows
+                .FirstOrDefaultAsync(x => x.UserId == userId && x.BookId == bookId);
+
+            if (borrowing == null)
+                return "No borrowing record found for this book and user.";
+
+            if (borrowing.IsReturned)
+                return "This book was already returned.";
+
+            
+            borrowing.IsReturned = true;
+
+            var book = await context.books.FirstOrDefaultAsync(x => x.Id == bookId);
+            if (book != null)
+            {
+                book.Quantity += 1;
+                context.books.Update(book);
+            }
+
+            context.borrows.Update(borrowing);
+            await context.SaveChangesAsync();
+
+            return "Returned successfully.";
+        }
+        #endregion
+
+    }
+}
