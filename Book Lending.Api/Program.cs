@@ -10,7 +10,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 using BookContext = BookLending.Infrastructure.Models.BookContext;
 
 namespace Book_Lending.Api
@@ -29,43 +31,46 @@ namespace Book_Lending.Api
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-            //#region Swagger Setting
-            //builder.Services.AddSwaggerGen(swagger =>
-            //{
-            //    //This is to generate the Default UI of Swagger Documentation    
-            //    swagger.SwaggerDoc("v1", new OpenApiInfo
-            //    {
-            //        Version = "v1",
-            //        Title = "ASP.NET 8 Web API",
-            //        Description = "  Projrcy"
-            //    });
-            //    // To Enable authorization using Swagger (JWT)    
-            //    swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-            //    {
-            //        Name = "Authorization",
-            //        Type = SecuritySchemeType.ApiKey,
-            //        Scheme = "Bearer",
-            //        BearerFormat = "JWT",
-            //        In = ParameterLocation.Header,
-            //        Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",
-            //    });
-            //    swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
-            //    {
-            //        {
-            //        new OpenApiSecurityScheme
-            //        {
-            //        Reference = new OpenApiReference
-            //        {
-            //        Type = ReferenceType.SecurityScheme,
-            //        Id = "Bearer"
-            //        }
-            //        },
-            //        new string[] {}
-            //        }
-            //        });
-            //});
-            //#endregion
+
+            //builder.Services.AddSwaggerGen();
+
+
+            #region Swagger Setting
+            builder.Services.AddSwaggerGen(swagger =>
+            {
+                //This is to generate the Default UI of Swagger Documentation    
+                swagger.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Book catolg",
+                    Description = "ASP.NET 8 Web API"
+                });
+                // To Enable authorization using Swagger (JWT)    
+                swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",
+                });
+                swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                    new OpenApiSecurityScheme
+                    {
+                    Reference = new OpenApiReference
+                    {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                    }
+                    },
+                    new string[] {}
+                    }
+                    });
+            });
+            #endregion
 
 
             builder.Services.AddDbContext<BookContext>(options =>
@@ -108,6 +113,18 @@ namespace Book_Lending.Api
                 //[authrize]
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;//unauth
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["JWT:IssuerIP"],
+                    ValidAudience = builder.Configuration["JWT:AudienceIP"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecritKey"]))
+                };
             });
 
 
@@ -126,6 +143,7 @@ namespace Book_Lending.Api
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

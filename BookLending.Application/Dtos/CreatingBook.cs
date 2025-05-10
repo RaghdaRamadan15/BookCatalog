@@ -15,6 +15,6 @@ namespace BookLending.Application.Dtos
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Quantity must more then 1 or equel 1")]
         public int Quantity { get; set; }
-        public bool IsDeleted { get; set; }= false;
+        
     }
 }

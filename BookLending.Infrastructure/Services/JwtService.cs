@@ -45,13 +45,14 @@ namespace BookLending.Infrastructure.Services
            issuer: jwtSettings.IssuerIP,
            audience: jwtSettings.AudienceIP,
            claims: UserClaims,
-           expires: DateTime.Now.AddHours(1),
+           expires: DateTime.Now.AddDays(3),
            signingCredentials: signingCred
        );
+            var result= new JwtSecurityTokenHandler().WriteToken(token);
+            return result;
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
 
-           
+
         }
     }
 }

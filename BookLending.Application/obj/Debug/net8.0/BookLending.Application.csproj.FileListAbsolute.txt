@@ -15,3 +15,4 @@ F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\refint\BookLending
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.pdb
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.genruntimeconfig.cache
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\ref\BookLending.Application.dll
+F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.sourcelink.json

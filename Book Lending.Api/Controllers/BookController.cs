@@ -36,7 +36,7 @@ namespace Book_Lending.Api.Controllers
         [HttpPut]
         [Authorize(Roles = "Admin")]
         #region updateBook
-        public async Task<IActionResult> updateBook(CreatingBook book,int bookId)
+        public async Task<IActionResult> updateBook(UpdateBook book,int bookId)
         {
            
             if (ModelState.IsValid)

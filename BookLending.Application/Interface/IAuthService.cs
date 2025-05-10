@@ -9,7 +9,7 @@ namespace BookLending.Application.Interface
 {
     public interface IAuthService
     {
-        Task<string> RegisterAsync(RegisterUser User);
+        Task<List<string>> RegisterAsync(RegisterUser User);
         Task<AuthResult> LoginAuthAsync(LoginUser User);
     }
 }

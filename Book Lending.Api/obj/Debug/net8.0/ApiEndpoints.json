@@ -57,7 +57,7 @@
     "Parameters": [
       {
         "Name": "book",
-        "Type": "BookLending.Application.Dtos.CreatingBook",
+        "Type": "BookLending.Application.Dtos.UpdateBook",
         "IsRequired": true
       },
       {

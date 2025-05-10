@@ -12,3 +12,4 @@ F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\refint\BookLending.Doma
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.pdb
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.genruntimeconfig.cache
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\ref\BookLending.Domain.dll
+F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.sourcelink.json

@@ -49,23 +49,21 @@ namespace BookLending.Application.Services
         #endregion
 
         #region return All case of books
-        public async Task<IEnumerable<Result<BorrowingBook>>> GetAll()
+        public async Task<IEnumerable<BorrowingBook>> GetAll()
         {
-            List<Result<BorrowingBook>> results = new List<Result<BorrowingBook>>();
+            List<BorrowingBook> results = new List<BorrowingBook>();
             var value = await userBorrowingRepository.GetBorrowings();
             if (value != null)
             {
                 foreach (var item in value)
                 {
-                    Result<BorrowingBook> data = new Result<BorrowingBook>
-                    {
-                        IsSuccess = true,
-                        Data = new BorrowingBook
-                        {
+                    BorrowingBook data = new BorrowingBook 
+                    { 
+                    
                             BookName = item.Book?.Name,
                             UserName = item.User?.UserName,
                             CaseBook = item.IsReturned ? "Returned" : "Not Returned"
-                        }
+                        
                     };
                    
                     
@@ -84,24 +82,21 @@ namespace BookLending.Application.Services
 
 
         #region return list from Member by bookID
-        public async Task<IEnumerable<Result<BorrowingBook>>> GetByBookIdAsync(int bookID)
+        public async Task<IEnumerable<BorrowingBook>> GetByBookIdAsync(int bookID)
         {
-            List<Result<BorrowingBook>> results = new List<Result<BorrowingBook>>();
+            List<BorrowingBook> results = new List<BorrowingBook>();
             var value = await userBorrowingRepository.GetByIdsync(bookID);
             if (value != null)
             {
                 foreach (var item in value)
                 {
-                    Result<BorrowingBook> data = new Result<BorrowingBook>
+                    BorrowingBook data = new BorrowingBook
                     {
-                       IsSuccess = true,
-                   
-                        Data = new BorrowingBook
-                        {
-                            BookName = item.Book?.Name,
-                            UserName = item.User?.UserName,
+                       
+                            BookName = item.Book.Name,
+                            UserName = item.User.UserName,
                             CaseBook = item.IsReturned ? "Returned" : "Not Returned"
-                        }
+                        
 
                     };
                     
@@ -119,23 +114,21 @@ namespace BookLending.Application.Services
         #endregion
 
         #region books for Member
-        public async Task<IEnumerable<Result<BorrowingBook>>> GetByUserIdAsync(string userId)
+        public async Task<IEnumerable<BorrowingBook>> GetByUserIdAsync(string userId)
         {
-            List<Result<BorrowingBook>> results = new List<Result<BorrowingBook>>();
+            List<BorrowingBook> results = new List<BorrowingBook>();
             var value = await userBorrowingRepository.GetByUserIdAsync(userId);
             if (value != null)
             {
                 foreach (var item in value)
                 {
-                    Result<BorrowingBook> data = new Result<BorrowingBook>
+                    BorrowingBook data = new BorrowingBook
                     {
-                        IsSuccess = true,
-                        Data = new BorrowingBook
-                        {
-                            BookName = item.Book?.Name,
-                            UserName = item.User?.UserName,
+                       
+                            BookName = item.Book.Name,
+                            UserName = item.User.UserName,
                             CaseBook = item.IsReturned ? "Returned" : "Not Returned"
-                        }
+                       
                     };
                    
                     results.Add(data);
@@ -150,24 +143,20 @@ namespace BookLending.Application.Services
 
         #endregion
         #region display not return
-        public async Task<IEnumerable<Result<CreateBrowingDto?>>> GetOverdueBorrowingsAsync()
+        public async Task<IEnumerable<CreateBrowingDto?>> GetOverdueBorrowingsAsync()
         {
-            List<Result<CreateBrowingDto>> results = new List<Result<CreateBrowingDto>>();
+            List<CreateBrowingDto> results = new List<CreateBrowingDto>();
             var value = await userBorrowingRepository.GetOverdueBorrowingsAsync();
             if (value != null)
             {
                 foreach (var item in value)
                 {
-                    Result<CreateBrowingDto> data = new Result<CreateBrowingDto>
+                   CreateBrowingDto data = new CreateBrowingDto
                     {
-                        IsSuccess = true,
-                        Data = new CreateBrowingDto
-                        {
-                            BorrowDate = item.BorrowDate,
+                           BorrowDate = item.BorrowDate,
                            UserId = item.UserId,
-                            BookId = item.BookId,
+                           BookId = item.BookId,
                            
-                        }
                     };
                    
                     results.Add(data);
@@ -192,12 +181,17 @@ namespace BookLending.Application.Services
             return result;
         }
 
+        Task<IEnumerable<CreateBrowingDto?>> IBorrowingServce.GetOverdueBorrowingsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
 
 
-        
 
-     
+
+
     }
 }

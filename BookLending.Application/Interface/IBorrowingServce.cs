@@ -14,10 +14,10 @@ namespace BookLending.Application.Interface
 
         Task<Result<Borrowing?>> AddBorrowAsync(CreateBrowingDto borrow);
         Task<string> UpdateBorrowAsync(int BookId, string UserId);
-        Task<IEnumerable<Result<BorrowingBook?>>> GetByUserIdAsync(string userId);
-        Task<IEnumerable<Result<BorrowingBook?>>> GetByBookIdAsync(int bookID);
-        Task<IEnumerable<Result<BorrowingBook?>>> GetAll();
-        Task<IEnumerable<Result<CreateBrowingDto?>>> GetOverdueBorrowingsAsync();
+        Task<IEnumerable<BorrowingBook?>> GetByUserIdAsync(string userId);
+        Task<IEnumerable<BorrowingBook?>> GetByBookIdAsync(int bookID);
+        Task<IEnumerable<BorrowingBook?>> GetAll();
+        Task<IEnumerable<CreateBrowingDto?>> GetOverdueBorrowingsAsync();
 
 
     }

@@ -23,8 +23,10 @@ namespace BookLending.Application.Services
             jwtTokenGenerator = _jwtTokenGenerator;
         }
 
-        public async Task<string> RegisterAsync(RegisterUser User)
+        #region Create Account
+        public async Task<List<string>> RegisterAsync(RegisterUser User)
         {
+            List<string> result = new List<string>();
             var member = new IdentityUser
             {
                 UserName = User.Username,
@@ -32,31 +34,42 @@ namespace BookLending.Application.Services
             };
 
             var Ruselt = await userRepository.CreateUserAsync(member, User.Password);
-            if (Ruselt.Succeeded)
+            if (!Ruselt.Succeeded)
             {
-                return "Created";
-            }
-            return  "NotCreated";
+                
+                result.Add("Not Created becouse:");
+                result.AddRange(Ruselt.Errors.Select(e => e.Description).ToList());
 
+                return result;
+            }
+            result.Add("Created");
+
+            return result;
         }
+        #endregion
+
+        #region login
         public async Task<AuthResult> LoginAuthAsync(LoginUser User)
         {
             AuthResult authResult = new AuthResult();
-            var returnUser=await userRepository.GetByEmailAsync(User.Email);
+            var returnUser = await userRepository.GetByEmailAsync(User.Email);
             var validPassword = await userRepository.CheckPasswordAsync(returnUser, User.Password);
             if (returnUser == null || !validPassword)
             {
-                
-                return authResult= null;
-            }
-            var token =  await jwtTokenGenerator.GenerateToken(returnUser);
 
-            authResult.Token= token;
-            authResult.Expiration= DateTime.UtcNow.AddDays(1);
-             
+                return authResult = null;
+            }
+            var token = await jwtTokenGenerator.GenerateToken(returnUser);
+
+            authResult.Token = token;
+            authResult.Expiration = DateTime.UtcNow.AddDays(3);
+
             return authResult;
         }
+        #endregion
 
-       
+
+
+
     }
 }

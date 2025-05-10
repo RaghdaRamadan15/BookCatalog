@@ -17,3 +17,4 @@ F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\refint\BookLend
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.pdb
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.genruntimeconfig.cache
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\ref\BookLending.Infrastructure.dll
+F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.sourcelink.json

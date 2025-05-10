@@ -43,7 +43,7 @@ namespace BookLending.Application.Services
         #endregion
 
         #region update book 
-        public async Task<Result<Book>> EditAsync(CreatingBook bookDto,int bookId)
+        public async Task<Result<Book>> EditAsync(UpdateBook bookDto,int bookId)
         {
             Result<Book> result = new Result<Book>();
 
@@ -53,6 +53,8 @@ namespace BookLending.Application.Services
             {
                 result.Message = "updated ";
                 result.Data = value;
+                result.IsSuccess= true;
+                return result;
             }
             result.Message = "please enter correct id";
             return result;
@@ -69,9 +71,11 @@ namespace BookLending.Application.Services
                
                 result.Message = "the book is delete";
                 result.Data = value;
+                result.IsSuccess = true;
+                return result;
 
             }
-            result.Message = "please enter write id for book";
+            result.Message = "please enter correct id";
 
 
             return result;
@@ -83,17 +87,18 @@ namespace BookLending.Application.Services
 
 
         #region get all
-        public async Task<List<Result<GetBook>>> GetBooks()
+        public async Task<List<GetBook>> GetBooks()
         {
-            List<Result<GetBook>> books = new List<Result<GetBook>>();
+            List<GetBook> books = new List<GetBook>();
             var result = await bookRepository.GetAllBooksAsync();
 
             if (result != null)
             {
+                
                 foreach (var book in result)
                 {
-                    Result<GetBook> returnBook = new Result<GetBook>();
-                     returnBook.Data = book.Adapt<GetBook>();
+                    GetBook returnBook = new GetBook();
+                     returnBook = book.Adapt<GetBook>();
                    
 
                     books.Add(returnBook);

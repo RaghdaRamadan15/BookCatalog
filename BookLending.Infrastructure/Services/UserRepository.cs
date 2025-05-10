@@ -1,4 +1,5 @@
-﻿using BookLending.Domain.Interfaces;
+﻿using BookLending.Application.Dtos;
+using BookLending.Domain.Interfaces;
 using BookLending.Infrastructure.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -27,20 +28,27 @@ namespace BookLending.Infrastructure.Services
 
         public async Task<IdentityResult> CreateUserAsync(IdentityUser user, string password)
         {
-            IdentityResult result= await userManager.CreateAsync(user, password);
-            if (result.Succeeded) {
-                await userManager.AddToRoleAsync(user, "Member");
-                await bookContext.SaveChangesAsync();
+           
+                IdentityResult result = await userManager.CreateAsync(user, password);
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(user, "Member");
+                    await bookContext.SaveChangesAsync();
+                    
+                }
 
-            }
             return result;
+
+
+
+
 
 
         }
 
-        public async Task<IdentityUser> GetByEmailAsync(string email)
+        public async Task<IdentityUser> GetByEmailAsync(string Email)
         {
-           var result=  await userManager.FindByEmailAsync(email);
+           var result=  await userManager.FindByEmailAsync(Email);
             return result;
         }
     }

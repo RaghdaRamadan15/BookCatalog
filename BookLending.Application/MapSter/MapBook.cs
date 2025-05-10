@@ -15,6 +15,7 @@ namespace BookLending.Application.MapSter
             //map from to 
             TypeAdapterConfig<Book, GetBook>.NewConfig();
             TypeAdapterConfig<CreatingBook, Book>.NewConfig();
+            TypeAdapterConfig<UpdateBook, Book>.NewConfig();
 
         }
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Book Lending.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7dc688a1d0dd1be8c22f0a7435d75abbe28bb404")]
 [assembly: System.Reflection.AssemblyProductAttribute("Book Lending.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Book Lending.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

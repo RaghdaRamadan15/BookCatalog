@@ -1,8 +1,9 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Book Lending.Api",
-    "version": "1.0"
+    "title": "Book catolg",
+    "description": "ASP.NET 8 Web API",
+    "version": "v1"
   },
   "paths": {
     "/api/Account/register": {
@@ -115,17 +116,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreatingBook"
+                "$ref": "#/components/schemas/UpdateBook"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreatingBook"
+                "$ref": "#/components/schemas/UpdateBook"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreatingBook"
+                "$ref": "#/components/schemas/UpdateBook"
               }
             }
           }
@@ -362,9 +363,6 @@
             "minimum": 1,
             "type": "integer",
             "format": "int32"
-          },
-          "isDeleted": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -411,7 +409,43 @@
           }
         },
         "additionalProperties": false
+      },
+      "UpdateBook": {
+        "required": [
+          "name",
+          "quantity"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "quantity": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",
+        "name": "Authorization",
+        "in": "header"
       }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

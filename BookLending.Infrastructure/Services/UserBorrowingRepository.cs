@@ -2,6 +2,7 @@
 using BookLending.Domain.Models;
 using BookLending.Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -9,15 +10,18 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace BookLending.Infrastructure.Services
 {
     public class UserBorrowingRepository : IUserBorrowingRepository
     {
         private BookContext context;
-        public UserBorrowingRepository(BookContext _context) 
+        private readonly IConfiguration config;
+        public UserBorrowingRepository(BookContext _context,IConfiguration _config) 
         {
             context= _context;
+            config= _config;
 
 
         }
@@ -35,7 +39,7 @@ namespace BookLending.Infrastructure.Services
                 borrow.UserId = userId;
                 borrow.BookId = borrowing.BookId;
                 borrow.BorrowDate = DateTime.Today;
-                borrow.DueDate = DateTime.Today.AddDays(7);
+                borrow.DueDate = DateTime.Today.AddDays(int.Parse(config["NumberDayBorrow:Number"]));
                 borrow.IsReturned = false;
                 var book = await context.books.FirstOrDefaultAsync(x => x.Id == borrowing.BookId);
                 if (book != null)
@@ -111,6 +115,7 @@ namespace BookLending.Infrastructure.Services
 
             
             borrowing.IsReturned = true;
+            borrowing.ReturnDate = DateTime.Today;
 
             var book = await context.books.FirstOrDefaultAsync(x => x.Id == bookId);
             if (book != null)
