@@ -38,7 +38,7 @@ namespace BookLending.Infrastructure.Services
             if (book != null)
             {
                 book.IsDeleted = true;
-                context.books.Update(book);
+                //context.books.Update(book);
                 await context.SaveChangesAsync();
                 return book;
             }
@@ -68,7 +68,7 @@ namespace BookLending.Infrastructure.Services
                 oldBook.Name = book.Name;
                 oldBook.IsDeleted = book.IsDeleted;
                 oldBook.Quantity = book.Quantity;
-                 context.books.Update(oldBook);
+                 //context.books.Update(oldBook);
                  await context.SaveChangesAsync();
                 return oldBook;
             }
@@ -81,7 +81,7 @@ namespace BookLending.Infrastructure.Services
         #region reapet query
         private static readonly Func<BookContext, int, Book> GetBookById =
             EF.CompileQuery((BookContext context, int id) =>
-                context.books.AsNoTracking().FirstOrDefault(x => x.Id == id));
+                context.books.FirstOrDefault(x => x.Id == id));
 
         #endregion
     }

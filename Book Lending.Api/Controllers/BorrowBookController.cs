@@ -18,7 +18,7 @@ namespace Book_Lending.Api.Controllers
         }
         [HttpPost("Borrow")]
         [Authorize]
-        public async Task<IActionResult> Addborrow(CreateBrowingDto borrow)
+        public async Task<IActionResult> Addborrow(CreatRequstBrorrow borrow)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace Book_Lending.Api.Controllers
         }
 
         [HttpPut("ReturnBook")]
-        [Authorize(Roles = "Member")]
+        [Authorize]
         public async Task<IActionResult> Update(int BookId,string userId)
         {
 

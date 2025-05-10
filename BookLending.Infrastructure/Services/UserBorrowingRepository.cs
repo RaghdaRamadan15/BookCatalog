@@ -1,6 +1,7 @@
 ﻿using BookLending.Domain.Interfaces;
 using BookLending.Domain.Models;
 using BookLending.Infrastructure.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualBasic;
@@ -18,10 +19,12 @@ namespace BookLending.Infrastructure.Services
     {
         private BookContext context;
         private readonly IConfiguration config;
-        public UserBorrowingRepository(BookContext _context,IConfiguration _config) 
+        //private readonly UserManager<IdentityUser> userManager;
+        public UserBorrowingRepository(BookContext _context,IConfiguration _config ) 
         {
             context= _context;
             config= _config;
+            //userManager = _userManager;
 
 
         }
@@ -30,6 +33,12 @@ namespace BookLending.Infrastructure.Services
         {
             var userId = borrowing.UserId;
             Borrowing borrow = new Borrowing();
+            //var userExist= await userManager.FindByIdAsync(userId);
+            //var bookExist = await context.books.FirstOrDefaultAsync(x=>x.Id==borrowing.BookId);
+            //if (userExist==null || bookExist==null)
+            //{
+            //    return null;
+            //}
             var isCanBrorrow = await context.borrows.Where(x => x.UserId == userId && x.IsReturned == false)
                    .FirstOrDefaultAsync();
             if (isCanBrorrow == null)

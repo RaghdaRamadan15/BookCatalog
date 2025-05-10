@@ -120,7 +120,7 @@
     "Parameters": [
       {
         "Name": "borrow",
-        "Type": "BookLending.Application.Dtos.CreateBrowingDto",
+        "Type": "BookLending.Application.Dtos.CreatRequstBrorrow",
         "IsRequired": true
       }
     ],

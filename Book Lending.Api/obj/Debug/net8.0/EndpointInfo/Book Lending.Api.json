@@ -201,17 +201,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateBrowingDto"
+                "$ref": "#/components/schemas/CreatRequstBrorrow"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateBrowingDto"
+                "$ref": "#/components/schemas/CreatRequstBrorrow"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateBrowingDto"
+                "$ref": "#/components/schemas/CreatRequstBrorrow"
               }
             }
           }
@@ -322,7 +322,7 @@
   },
   "components": {
     "schemas": {
-      "CreateBrowingDto": {
+      "CreatRequstBrorrow": {
         "required": [
           "bookId",
           "userId"
@@ -336,13 +336,6 @@
           "bookId": {
             "type": "integer",
             "format": "int32"
-          },
-          "borrowDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isReturned": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false

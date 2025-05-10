@@ -1,10 +1,3 @@
-F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.csproj.AssemblyReference.cache
-F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.GeneratedMSBuildEditorConfig.editorconfig
-F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.AssemblyInfoInputs.cache
-F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.AssemblyInfo.cs
-F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.csproj.CoreCompileInputs.cache
-F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.MvcApplicationPartsAssemblyInfo.cs
-F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.MvcApplicationPartsAssemblyInfo.cache
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\appsettings.Development.json
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\appsettings.json
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Book Lending.Api.staticwebassets.endpoints.json
@@ -15,7 +8,13 @@ F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Book Lending.Api.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Book Lending.Api.pdb
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Azure.Core.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Azure.Identity.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Hangfire.AspNetCore.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Hangfire.Core.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Hangfire.NetCore.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Hangfire.SqlServer.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Humanizer.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\MailKit.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Mapster.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Mapster.Core.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -53,7 +52,9 @@ F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Microsoft.IdentityModel.T
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Microsoft.OpenApi.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\MimeKit.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Mono.TextTemplating.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -70,9 +71,24 @@ F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\System.Formats.Asn1.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\System.Memory.Data.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\System.Runtime.Caching.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\System.Security.Permissions.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\System.Windows.Extensions.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\ca\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\de\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\es\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\fa\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\fr\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\nb\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\nl\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\pt-BR\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\pt-PT\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\pt\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\sv\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\tr-TR\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\zh-TW\Hangfire.Core.resources.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\zh\Hangfire.Core.resources.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -135,6 +151,7 @@ F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\M
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\BookLending.Application.dll
@@ -143,6 +160,14 @@ F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\BookLending.Infrastructur
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\BookLending.Infrastructure.pdb
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\BookLending.Application.pdb
 F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\BookLending.Domain.pdb
+F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.csproj.AssemblyReference.cache
+F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.GeneratedMSBuildEditorConfig.editorconfig
+F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.AssemblyInfoInputs.cache
+F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.AssemblyInfo.cs
+F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.csproj.CoreCompileInputs.cache
+F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.MvcApplicationPartsAssemblyInfo.cs
+F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.MvcApplicationPartsAssemblyInfo.cache
+F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.sourcelink.json
 F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\scopedcss\bundle\Book Lending.Api.styles.css
 F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\staticwebassets.build.json
 F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\staticwebassets.development.json
@@ -160,28 +185,3 @@ F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\refint\Book Lending.Api.d
 F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.pdb
 F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.genruntimeconfig.cache
 F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\ref\Book Lending.Api.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Hangfire.AspNetCore.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Hangfire.Core.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Hangfire.NetCore.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Hangfire.SqlServer.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\ca\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\de\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\es\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\fa\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\fr\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\nb\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\nl\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\pt-BR\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\pt-PT\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\pt\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\sv\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\tr-TR\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\zh-TW\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\zh\Hangfire.Core.resources.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\MailKit.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\MimeKit.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-F:\Net Campnay\Books\Book Lending.Api\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-F:\Net Campnay\Books\Book Lending.Api\obj\Debug\net8.0\Book Lending.Api.sourcelink.json

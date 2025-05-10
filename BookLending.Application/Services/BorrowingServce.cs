@@ -21,7 +21,7 @@ namespace BookLending.Application.Services
             userBorrowingRepository = _userBorrowing;
         }
         #region AddBorrow
-        public async Task<Result<Borrowing>> AddBorrowAsync(CreateBrowingDto borrow)
+        public async Task<Result<Borrowing>> AddBorrowAsync(CreatRequstBrorrow borrow)
         {
             var borrowing = borrow.Adapt<Borrowing>();
 
@@ -181,10 +181,7 @@ namespace BookLending.Application.Services
             return result;
         }
 
-        Task<IEnumerable<CreateBrowingDto?>> IBorrowingServce.GetOverdueBorrowingsAsync()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         #endregion
 

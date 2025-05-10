@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookLending.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7dc688a1d0dd1be8c22f0a7435d75abbe28bb404")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e448d9de3c4328e2baad7656072c3f5dba78d9a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookLending.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookLending.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

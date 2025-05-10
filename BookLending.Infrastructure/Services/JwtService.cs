@@ -27,7 +27,7 @@ namespace BookLending.Infrastructure.Services
         public async Task<string> GenerateToken(IdentityUser User)
         {
 
-            var role =await userManager.GetRolesAsync(User);
+            var userRoles = await userManager.GetRolesAsync(User);
             var signInKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecritKey));
            SigningCredentials signingCred = new SigningCredentials
                                         (signInKey, SecurityAlgorithms.HmacSha256);
@@ -39,6 +39,11 @@ namespace BookLending.Infrastructure.Services
             UserClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
             UserClaims.Add(new Claim(ClaimTypes.NameIdentifier, User.Id));
             UserClaims.Add(new Claim(ClaimTypes.Name, User.UserName));
+            foreach (var roleName in userRoles)
+            {
+                UserClaims.Add(new Claim(ClaimTypes.Role, roleName));
+            }
+            
 
             //create token
             var token = new JwtSecurityToken(

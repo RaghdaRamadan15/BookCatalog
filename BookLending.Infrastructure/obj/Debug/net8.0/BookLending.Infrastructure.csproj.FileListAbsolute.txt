@@ -11,10 +11,10 @@ F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Inf
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.AssemblyInfoInputs.cache
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.AssemblyInfo.cs
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.csproj.CoreCompileInputs.cache
+F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.sourcelink.json
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLend.A1435542.Up2Date
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.dll
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\refint\BookLending.Infrastructure.dll
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.pdb
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.genruntimeconfig.cache
 F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\ref\BookLending.Infrastructure.dll
-F:\Net Campnay\Books\BookLending.Infrastructure\obj\Debug\net8.0\BookLending.Infrastructure.sourcelink.json

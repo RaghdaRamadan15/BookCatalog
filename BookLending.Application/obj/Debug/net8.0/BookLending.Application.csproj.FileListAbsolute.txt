@@ -9,10 +9,10 @@ F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Applic
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.AssemblyInfoInputs.cache
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.AssemblyInfo.cs
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.csproj.CoreCompileInputs.cache
+F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.sourcelink.json
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLend.325EC5E3.Up2Date
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.dll
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\refint\BookLending.Application.dll
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.pdb
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.genruntimeconfig.cache
 F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\ref\BookLending.Application.dll
-F:\Net Campnay\Books\BookLending.Application\obj\Debug\net8.0\BookLending.Application.sourcelink.json

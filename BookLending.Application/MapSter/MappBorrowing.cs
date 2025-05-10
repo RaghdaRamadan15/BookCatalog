@@ -15,6 +15,7 @@ namespace BookLending.Application.MapSter
         public static void MapBorrow()
         {
             TypeAdapterConfig<CreateBrowingDto,Borrowing>.NewConfig();
+            TypeAdapterConfig<CreatRequstBrorrow, Borrowing>.NewConfig();
             TypeAdapterConfig<ReturnBook,Borrowing >.NewConfig();
             
         }

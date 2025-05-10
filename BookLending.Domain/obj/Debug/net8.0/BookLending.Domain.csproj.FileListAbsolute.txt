@@ -7,9 +7,9 @@ F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.Gene
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.AssemblyInfoInputs.cache
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.AssemblyInfo.cs
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.csproj.CoreCompileInputs.cache
+F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.sourcelink.json
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.dll
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\refint\BookLending.Domain.dll
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.pdb
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.genruntimeconfig.cache
 F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\ref\BookLending.Domain.dll
-F:\Net Campnay\Books\BookLending.Domain\obj\Debug\net8.0\BookLending.Domain.sourcelink.json

@@ -12,7 +12,7 @@ namespace BookLending.Application.Interface
     {
         //Task<Result<BorrowingBook>> GetBorrowAsync(int Id);
 
-        Task<Result<Borrowing?>> AddBorrowAsync(CreateBrowingDto borrow);
+        Task<Result<Borrowing?>> AddBorrowAsync(CreatRequstBrorrow borrow);
         Task<string> UpdateBorrowAsync(int BookId, string UserId);
         Task<IEnumerable<BorrowingBook?>> GetByUserIdAsync(string userId);
         Task<IEnumerable<BorrowingBook?>> GetByBookIdAsync(int bookID);
