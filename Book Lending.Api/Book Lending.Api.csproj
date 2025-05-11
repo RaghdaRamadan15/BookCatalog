@@ -24,4 +24,8 @@
     <ProjectReference Include="..\BookLending.Infrastructure\BookLending.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

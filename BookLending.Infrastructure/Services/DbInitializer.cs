@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using BookLending.Domain.Enums;
+using BookLending.Domain.Models;
+using Microsoft.AspNetCore.Identity;
 
-namespace Book_Lending.Api.Models
+namespace BookLending.Infrastructure.Services
 {
     public static class DbInitializer
     {
@@ -9,7 +11,12 @@ namespace Book_Lending.Api.Models
         public static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
         {
 
-            string[] roleNames = { "Admin", "Member" };
+
+            //string[] roleNames = { "Admin", "Member" };
+            var roleNames = Enum.GetValues(typeof(Roles))
+                        .Cast<Roles>()  
+                        .Select(role => role.ToString())  
+                        .ToList();
 
             foreach (var roleName in roleNames)
             {
@@ -26,22 +33,22 @@ namespace Book_Lending.Api.Models
 
         public static async Task SeedUsersAsync(UserManager<IdentityUser> userManager)
         {
-            var user = await userManager.FindByEmailAsync("admin@gmail.com");
+            var user = await userManager.FindByEmailAsync(SettingAdmin.Email);
             if (user == null)
             {
                 user = new IdentityUser
                 {
-                    UserName = "admin11",
-                    Email = "admin@gmail.com"
+                    UserName = SettingAdmin.UserName,
+                    Email = SettingAdmin.Email,
                 };
 
                 
-                var result = await userManager.CreateAsync(user, "Admin@123");
+                var result = await userManager.CreateAsync(user, SettingAdmin.Password);
 
                 if (result.Succeeded)
                 {
                     
-                    await userManager.AddToRoleAsync(user, "Admin");
+                    await userManager.AddToRoleAsync(user, SettingAdmin.Role);
                 }
                 
             }

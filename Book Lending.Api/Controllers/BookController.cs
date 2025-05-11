@@ -1,5 +1,6 @@
 ﻿using BookLending.Application.Dtos;
 using BookLending.Application.Services;
+using BookLending.Domain.Enums;
 using BookLending.Infrastructure.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -20,7 +21,8 @@ namespace Book_Lending.Api.Controllers
 
         #region Add
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles=nameof(Roles.Admin))]
         public async Task<IActionResult>AddBook(CreatingBook book)
         {
             if (ModelState.IsValid) 
@@ -34,7 +36,8 @@ namespace Book_Lending.Api.Controllers
         #endregion
 
         [HttpPut]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = nameof(Roles.Admin))]
         #region updateBook
         public async Task<IActionResult> updateBook(UpdateBook book,int bookId)
         {
@@ -52,7 +55,8 @@ namespace Book_Lending.Api.Controllers
 
         #region delete
         [HttpDelete]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = nameof(Roles.Admin))]
         public async Task<IActionResult> Remove(int bookId)
         {
             var result = await bookServices.DeleteAsync(bookId);

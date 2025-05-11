@@ -1,5 +1,6 @@
 ﻿using BookLending.Application.Dtos;
 using BookLending.Application.Services;
+using BookLending.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +32,8 @@ namespace Book_Lending.Api.Controllers
         }
 
         [HttpGet("DisplayAll")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = nameof(Roles.Admin))]
         public async Task<IActionResult> GetAllborrow()
         {
 
@@ -80,7 +82,8 @@ namespace Book_Lending.Api.Controllers
 
 
         [HttpGet("DisplaybooksOverDue")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = nameof(Roles.Admin))]
         public async Task<IActionResult> GetLateBOOK()
         {
 
