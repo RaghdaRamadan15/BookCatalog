@@ -131,7 +131,7 @@ namespace Book_Lending.Api
             // Setting for Hangfire
             builder.Services.AddHangfire(x => x.UseSqlServerStorage(builder.Configuration.GetConnectionString("Database")));
             builder.Services.AddHangfireServer();
-
+          
             var app = builder.Build();
 
             
@@ -152,8 +152,8 @@ namespace Book_Lending.Api
 
             app.MapControllers();
 
-            
 
+            //await DbInitializer.SeedRolesAsync(RoleManager);
 
             // scope to add Seed Data in database 
             using (var scope = app.Services.CreateScope())
@@ -168,7 +168,8 @@ namespace Book_Lending.Api
                 await DbInitializer.SeedUsersAsync(userManager);
 
                 //Run Job
-                RecurringJob.AddOrUpdate<EmailService>(
+
+                RecurringJob.AddOrUpdate<EmailService>("SendEmailJob",
                 job => job.SendEmailReturnAsync(),
                 Cron.Daily);
                 

@@ -10,15 +10,10 @@ namespace Book_Lending.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class AccountController( AuthService _authService) : ControllerBase
     {
-        public BookContext context;
-        private readonly AuthService authService;
-        public AccountController(BookContext _context, AuthService _authService)
-        {
-            context = _context;
-            authService = _authService;
-        }
+       
+
         [HttpPost("register")]
        
         public async Task<IActionResult> Register(RegisterUser user)
@@ -26,7 +21,7 @@ namespace Book_Lending.Api.Controllers
 
             if (ModelState.IsValid)
             {
-                var result= await authService.RegisterAsync(user);
+                var result= await _authService.RegisterAsync(user);
                 return Ok(result);
             }
             return BadRequest("enter data");
@@ -36,7 +31,7 @@ namespace Book_Lending.Api.Controllers
         
         public async Task<IActionResult> Login(LoginUser user)
         {
-            var result = await authService.LoginAuthAsync(user);
+            var result = await _authService.LoginAuthAsync(user);
             if (result==null)
                 return Unauthorized("Invalid credentials");
 

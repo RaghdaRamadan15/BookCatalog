@@ -33,14 +33,9 @@ namespace BookLending.Infrastructure.Services
         {
             var userId = borrowing.UserId;
             Borrowing borrow = new Borrowing();
-            //var userExist= await userManager.FindByIdAsync(userId);
-            //var bookExist = await context.books.FirstOrDefaultAsync(x=>x.Id==borrowing.BookId);
-            //if (userExist==null || bookExist==null)
-            //{
-            //    return null;
-            //}
+           
             var isCanBrorrow = await context.borrows.Where(x => x.UserId == userId && x.IsReturned == false)
-                   .FirstOrDefaultAsync();
+                   .AsNoTracking().FirstOrDefaultAsync();
             if (isCanBrorrow == null)
             {
 
@@ -100,7 +95,8 @@ namespace BookLending.Infrastructure.Services
         #region getAll late
         public async Task<IEnumerable<Borrowing?>> GetOverdueBorrowingsAsync()
         {
-            return await context.borrows.Where(x => x.IsReturned == false && x.DueDate < DateTime.Today).AsNoTracking().ToListAsync();
+            var day = DateTime.Today;
+            return await context.borrows.Where(x => x.IsReturned == false && x.DueDate < day).AsNoTracking().ToListAsync();
 
         }
         #endregion

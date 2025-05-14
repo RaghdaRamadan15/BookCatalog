@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookLending.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e128eb9849f165eee8e9ca3de48db0aabe28d4a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+356a5f3265df88d9a83fe70d1c3c4f259e2f1319")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookLending.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookLending.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

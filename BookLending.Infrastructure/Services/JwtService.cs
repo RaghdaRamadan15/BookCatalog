@@ -38,7 +38,7 @@ namespace BookLending.Infrastructure.Services
             List<Claim> UserClaims = new List<Claim>();
             UserClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
             UserClaims.Add(new Claim(ClaimTypes.NameIdentifier, User.Id));
-            UserClaims.Add(new Claim(ClaimTypes.Name, User.UserName));
+            UserClaims.Add(new Claim(ClaimTypes.Name, User.UserName!));
             foreach (var roleName in userRoles)
             {
                 UserClaims.Add(new Claim(ClaimTypes.Role, roleName));

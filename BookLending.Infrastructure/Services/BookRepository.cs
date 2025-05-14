@@ -49,7 +49,8 @@ namespace BookLending.Infrastructure.Services
 
         public async Task<IEnumerable<Book?>> GetAllBooksAsync()
         {
-            var books= await context.books.AsNoTracking().Where(x=>!x.IsDeleted&&x.Quantity>=1).ToListAsync();
+            var quantity = 1;
+            var books= await context.books.AsNoTracking().Where(x=>!x.IsDeleted&&x.Quantity>= quantity).ToListAsync();
             return books;
         }
 

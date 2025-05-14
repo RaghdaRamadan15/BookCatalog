@@ -57,7 +57,7 @@ namespace BookLending.Application.Services
             if (returnUser == null || !validPassword)
             {
 
-                return authResult = null;
+                return null;
             }
             var token = await jwtTokenGenerator.GenerateToken(returnUser);
 

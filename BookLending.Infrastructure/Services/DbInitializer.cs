@@ -1,6 +1,7 @@
 ﻿using BookLending.Domain.Enums;
 using BookLending.Domain.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BookLending.Infrastructure.Services
 {
@@ -10,8 +11,7 @@ namespace BookLending.Infrastructure.Services
 
         public static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
         {
-
-
+            
             //string[] roleNames = { "Admin", "Member" };
             var roleNames = Enum.GetValues(typeof(Roles))
                         .Cast<Roles>()  

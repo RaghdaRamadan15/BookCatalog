@@ -30,8 +30,9 @@ namespace BookLending.Infrastructure.Services
 
         public async Task<IEnumerable<SendingEmail>> GetMemberReturnAsyn()
         {
+            var day = DateTime.Today;
             List <SendingEmail> result = new List<SendingEmail>();
-            var value = await bookContext.borrows.Where(x => !x.IsReturned && x.DueDate < DateTime.Today).Select(x => new SendingEmail
+            var value = await bookContext.borrows.Where(x => !x.IsReturned && x.DueDate < day).Select(x => new SendingEmail
             {
                 MemberName=x.User.UserName,
                 BookName=x.Book.Name,
@@ -49,6 +50,7 @@ namespace BookLending.Infrastructure.Services
         //IEnumerable<SendingEmail> sendingEmails
         public async Task SendEmailReturnAsync()
         {
+            
             var sendingEmails= await GetMemberReturnAsyn();
             var smtpClient = new SmtpClient(emailSetting.Host)
             {
